@@ -36,7 +36,7 @@ const productSchema = new mongoose.Schema({
   },
   discount: {
     type: Number,
-    min: 1
+    min: 0
   },
   featured: {
     type: Boolean,
