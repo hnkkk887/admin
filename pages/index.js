@@ -226,7 +226,7 @@ export default function Home() {
         <lable>discount%:</lable>
         <input
           type="number"
-          min="1"
+          min="0"
           required
           name="discount"
           className={styles.formInput}
