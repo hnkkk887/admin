@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 export default function Home() {
   const [data, setData] = useState("");
 
-  const handleChange = e => setData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+  // const handleChange = e => setData(prev => ({ ...prev, [e.target.name]: e.target.value }));
 
   async function submitFn() {
     try {
@@ -18,9 +18,7 @@ export default function Home() {
       toast.error(err.response.data, { position: toast.POSITION.TOP_RIGHT });
     }
 
-    setData({
-      productID: ""
-    })
+    setData("")
   }
 
   function handleSubmit(e) {
@@ -43,7 +41,7 @@ export default function Home() {
           className={styles.formInput}
           placeholder="productID produs"
           value={data.productID}
-          onChange={handleChange}
+          onChange={() => setData(e.target.value)}
         />
 
         <button>creaza id</button>
