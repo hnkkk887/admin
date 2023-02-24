@@ -29,6 +29,7 @@ async function handler(req, res) {
           slug: ""
         });
         product.slug = product._id;
+               product.id = product._id;
         await product.save();
 
         if(!product) return res.status(401).send("Produsul nu a putut sa fie adaugat");
