@@ -8,7 +8,7 @@ async function handler(req, res) {
   switch (method) {
     case "POST":
       try {
-        await Product.update({_id: body.data, {$set: {id: body.data}}});
+        await Product.updateOne({_id: body.data, {$set: {id: body.data}}});
 
         
         return res.status(200).send("niceee");
