@@ -8,8 +8,11 @@ async function handler(req, res) {
   switch (method) {
     case "POST":
       try {
-        await Product.updateOne({_id: body.data}, {$set: {id: body.data}});
+        let p = await Product.findOne({_id: body.data});
+        p.id = body.data;
 
+        await p.save();
+        
         return res.status(200).send("niceee");
       } catch (error) {
         console.log(error)
