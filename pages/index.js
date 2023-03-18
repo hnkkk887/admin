@@ -55,10 +55,6 @@ function filtersReducer(state, action) {
   }
 }
 
-  useEffect(() => {
-    console.log(`${process.env.NEXT_PUBLIC_URL}`, "asta eeeeeeeeeeeeeeeeeeee");
-  }, [])
-
 export default function Home() {
   const [state, dispatchReducer] = useReducer(filtersReducer, INITIAL_STATE);
   const [additional, setAdditional] = useState({
@@ -154,6 +150,10 @@ export default function Home() {
 
     submitFn();
   }
+  
+   useEffect(() => {
+    console.log(`${process.env.NEXT_PUBLIC_URL}`, "asta eeeeeeeeeeeeeeeeeeee");
+  }, [])
 
   return (
     <div className={styles.container}>
