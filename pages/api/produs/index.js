@@ -5,7 +5,7 @@ import Joi from 'joi';
 
 async function handler(req, res) {
   const { method, body } = req;
-  await dbConnect();
+  await dbConnect();                               
 
   switch (method) {
     case "PATCH":
