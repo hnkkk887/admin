@@ -1,5 +1,5 @@
 import styles from '../styles/Home.module.css'
-import { useState, useReducer } from "react";
+import { useState, useEffect, useReducer } from "react";
 import axios from "axios";
 import { toast } from 'react-toastify';
 
@@ -54,6 +54,10 @@ function filtersReducer(state, action) {
       return state;
   }
 }
+
+  useEffect(() => {
+    console.log(`${process.env.NEXT_PUBLIC_URL}`, "asta eeeeeeeeeeeeeeeeeeee");
+  }, [])
 
 export default function Home() {
   const [state, dispatchReducer] = useReducer(filtersReducer, INITIAL_STATE);
