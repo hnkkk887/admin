@@ -3,6 +3,7 @@ import Product from "../../../models/product";
 import { v4 as uuidv4 } from 'uuid';
 import Joi from 'joi';
 
+
 async function handler(req, res) {
   const { method, body } = req;
   await dbConnect();                               
